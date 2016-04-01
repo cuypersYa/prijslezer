@@ -1222,8 +1222,7 @@ var checkPageCarrefour = function(loc) {
 			    }
 				checkTest=1;
 
-	          }
-	          catch(err) {
+	        }catch(err) {
 	          	setTimeout(function() {
 			         		jQuery('.next',curdoc)[0].click();
 				            if (!jQuery('.next',curdoc)[0]){
@@ -1258,20 +1257,37 @@ var checkPageCarrefour = function(loc) {
 							Services.prompt.alert(null,"ERROR--1","NOT CLICK interval: " +err2);
 			            }, timeSec*3);
 		         }*/
-	          }
-    	}, timeSec);
-    	if checkTest=0{
-    		setTimeout(function() {
-			         		jQuery('.next',curdoc)[0].click();
-				            if (!jQuery('.next',curdoc)[0]){
-							      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-							      	gBrowser.removeTab(closetab);
+	        }
+	          
+          	if (checkTest=0)
+          	{
+          		try {
+		    		setTimeout(function() {
+					         		jQuery('.next',curdoc)[0].click();
+						            if (!jQuery('.next',curdoc)[0]){
+									      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
+									      	gBrowser.removeTab(closetab);
 
-						    }
-						    checkTest=1;
-							//Services.prompt.alert(null,"ERROR--1","NOT CLICK interval: " +err);
-			            }, timeSec*1.5);
-    	}
+								    }
+								    checkTest=1;
+									//Services.prompt.alert(null,"ERROR--1","NOT CLICK interval: " +err);
+					            }, timeSec*1.75);
+	    		}catch(err) {
+	    			setTimeout(function() {
+					         		jQuery('.next',curdoc)[0].click();
+						            if (!jQuery('.next',curdoc)[0]){
+									      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
+									      	gBrowser.removeTab(closetab);
+
+								    }
+								    checkTest=1;
+									//Services.prompt.alert(null,"ERROR--1","NOT CLICK interval: " +err);
+					            }, timeSec*1.75);
+	    		}
+	    	}
+
+    	}, timeSec);
+
 
 		/*var test = setTimeout(function() {
 					//Services.prompt.alert(null,"use Timeout",timeSec);
