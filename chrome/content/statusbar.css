@@ -1,0 +1,6 @@
+#alvo-panel, #alvo-panel > * {
+	cursor: pointer;
+}
+#alvo-panel:hover {
+	color: #CC0000;
+}

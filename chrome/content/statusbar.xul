@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://delhaizedirect/content/statusbar.css" type="text/css"?>
+
+<overlay id="statusbar" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/javascript" src="delhaizedirect.js" />
+	<script type="application/javascript" src="statusbar.js"/>
+	
+	<statusbar id="status-bar">
+		<statusbarpanel id="alvo-panel" label="Standby..." onclick="onBtnClick();" />
+	</statusbar>
+</overlay>

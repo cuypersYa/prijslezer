@@ -1,0 +1,4 @@
+content     delhaizedirect    chrome/content/
+content     delhaizedirect    chrome/content/ contentaccessible=yes
+
+overlay chrome://browser/content/browser.xul chrome://delhaizedirect/content/statusbar.xul

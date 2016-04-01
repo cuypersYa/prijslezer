@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://delhaizedirect/content/options.css" type="text/css"?>
+
+<prefwindow title="Instellingen" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<prefpane label="Voorkeuren" width="510">
+		<preferences>
+			<preference id="delhaize-direct-datefolder" name="extensions.delhaizedirect.datefolder" type="bool" />
+			<preference id="delhaize-direct-auto" name="extensions.delhaizedirect.auto" type="bool" />
+			<preference id="delhaize-direct-path" name="extensions.delhaizedirect.path" type="string" />
+			<preference id="delhaize-direct-pathc" name="extensions.delhaizedirect.pathc" type="string" />
+			<preference id="delhaize-direct-pathc2" name="extensions.delhaizedirect.pathc2" type="string" />
+			<preference id="delhaize-direct-pathc3" name="extensions.delhaizedirect.pathc3" type="string" />
+			<preference id="delhaize-direct-pageinterval" name="extensions.delhaizedirect.pageinterval" type="string" />
+		</preferences>
+		
+		<script type="application/javascript" src="chrome://delhaizedirect/content/options.js"/>
+		
+		<groupbox>
+			<hbox align="center">
+				<caption label="Opslagpad Delhaize:" />
+				<textbox preference="delhaize-direct-path" width="220" />
+				<button label="Bladeren" oncommand="onBrowse();"/>
+			</hbox>
+			
+			<hbox align="center">
+				<caption label="Opslagpad Carrefour:" />
+				<textbox preference="delhaize-direct-pathc" width="220" />
+				<button label="Bladeren" oncommand="onBrowseC();"/>
+			</hbox>
+			
+			<hbox align="center">
+				<caption label="Opslagpad Collect&amp;Go:" />
+				<textbox preference="delhaize-direct-pathc2" width="220" />
+				<button label="Bladeren" oncommand="onBrowseC2();"/>
+			</hbox>
+			
+			<hbox align="center">
+				<caption label="Opslagpad Cactus:" />
+				<textbox preference="delhaize-direct-pathc3" width="220" />
+				<button label="Bladeren" oncommand="onBrowseC3();"/>
+			</hbox>
+			
+			<hbox align="center">
+				<caption label="Carrefour interval (in sec):" />
+				<textbox preference="delhaize-direct-pageinterval" width="220" />
+			</hbox>
+			
+			<hbox align="center">
+				<caption label="" />
+				<checkbox id="autorun" preference="delhaize-direct-datefolder" label="Submap maken op datum" />
+			</hbox>
+			
+			<hbox align="center">
+				<caption label="" />
+				<checkbox id="autorun" preference="delhaize-direct-auto" label="Automatische modus" />
+			</hbox>
+		</groupbox>
+
+	</prefpane>
+
+</prefwindow>
