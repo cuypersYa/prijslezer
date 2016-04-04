@@ -1130,196 +1130,34 @@ var checkPageCarrefour = function(loc) {
 	//Services.prompt.alert(null,"check loc indexOf: ",loc.indexOf());
 	if(loc.indexOf('/pid') > -1 || loc.indexOf('/searchresult') > -1) {
 		globalCounter += 1;
-		var timeSec=2000;
+		var timeSec=10000;
 		var test2="";
 		var test3="";
 		var test4="";
-		var globalQUit="";
-		/*
-		// 300000 = 5min // 60000 = 1min*/
-		/*var test4 = setTimeout(function() {
-								clearTimeout(globalQUit);
-								//Services.prompt.alert(null,"use Timeout 3",timeSec);
-								gBrowser.removeTab(closetab);
-							}, timeSec+ 12000);
-		var test3 = setTimeout(function() {
-					      		clearTimeout(test4);
-								clearTimeout(globalQUit);
-											//Services.prompt.alert(null,"use Timeout 3",timeSec);
-										
-											jQuery('.next',curdoc)[0].click();	
-											if (!jQuery('.next',curdoc)[0]){
-										      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-										      	gBrowser.removeTab(closetab);
-
-										      }else{
-											      	jQuery('.next',curdoc)[0].click();
-											  }
-
-										}, timeSec+ 8000);*/
-		/*var test2 = setTimeout(function() {
-					      		clearTimeout(test3);
-								clearTimeout(test4);
-								clearTimeout(globalQUit);
-								//Services.prompt.alert(null,"use Timeout 3",timeSec);
-							
-								jQuery('.next',curdoc)[0].click();	
-								if (!jQuery('.next',curdoc)[0]){
-							      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-							      	gBrowser.removeTab(closetab);
-
-							      }else{
-								      	jQuery('.next',curdoc)[0].click();
-								  }
-
-							}, timeSec+ 4000);*/
-		/*var test = setTimeout(function() {
-					      		//clearTimeout(test2);
-								//clearTimeout(test3);
-								//clearTimeout(test4);
-								//
-								//Services.prompt.alert(null,"use Timeout 3",timeSec);
-								
-								//jQuery('.next',curdoc)[0].click();	
-								if (!jQuery('.next',curdoc)[0]){
-							      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-							      	gBrowser.removeTab(closetab);
-
-							      }else{
-								      	jQuery('.next',curdoc)[0].click();
-
-								  }
-								if (jQuery('.next',curdoc)[0].clicked == true) {
-									clearTimeout(globalQUit);
-								}
-								//clearTimeout(globalQUit);
-								//Services.prompt.alert(null,"TEST","NOT CLICK interval: " +timeSec);
-								
-
-							}, timeSec);
-		var globalQUit = setTimeout(function() {
-
-										//Services.prompt.alert(null,"use globalQUit 300000 -> 5min","use globalQUit 300000 -> 5min");
-										//jQuery('.next',curdoc)[0].click();	
-										if (!jQuery('.next',curdoc)[0]){
-									      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-									      	gBrowser.removeTab(closetab);
-
-									      }else{
-										      	jQuery('.next',curdoc)[0].click();
-										  }
-									}, interval * (timeSec*2));
-		*/
-		var checkTest=0;
 		var test = setTimeout(function() {
-	          try {
-		          	
-          		jQuery('.next',curdoc)[0].click();
-          		if (!jQuery('.next',curdoc)[0]){
-			      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-			      	gBrowser.removeTab(closetab);
-
-			    }
-				checkTest=1;
-
-	        }catch(err) {
-	          	setTimeout(function() {
-			         		jQuery('.next',curdoc)[0].click();
-				            if (!jQuery('.next',curdoc)[0]){
-							      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-							      	gBrowser.removeTab(closetab);
-
-						    }
-						    checkTest=1;
-							//Services.prompt.alert(null,"ERROR--1","NOT CLICK interval: " +err);
-			            }, timeSec*1.5);
-
-	          	 /*try {
-			             setTimeout(function() {
-			             	jQuery('.next',curdoc)[0].click();
-				             if (!jQuery('.next',curdoc)[0]){
-							      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-							      	gBrowser.removeTab(closetab);
-
-						      }
-
-							Services.prompt.alert(null,"ERROR","NOT CLICK interval: " +err);
-			            }, timeSec*2);
-		         }catch (err2){
-			         	setTimeout(function() {
-			         		jQuery('.next',curdoc)[0].click();
-				            if (!jQuery('.next',curdoc)[0]){
-							      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-							      	gBrowser.removeTab(closetab);
-
-						    }
-
-							Services.prompt.alert(null,"ERROR--1","NOT CLICK interval: " +err2);
-			            }, timeSec*3);
-		         }*/
-	        }
-	          
-          	if (checkTest=0)
-          	{
-          		try {
-		    		setTimeout(function() {
-					         		jQuery('.next',curdoc)[0].click();
-						            if (!jQuery('.next',curdoc)[0]){
-									      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-									      	gBrowser.removeTab(closetab);
-
-								    }
-								    checkTest=1;
-									//Services.prompt.alert(null,"ERROR--1","NOT CLICK interval: " +err);
-					            }, timeSec*1.75);
-	    		}catch(err) {
-	    			setTimeout(function() {
-					         		jQuery('.next',curdoc)[0].click();
-						            if (!jQuery('.next',curdoc)[0]){
-									      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-									      	gBrowser.removeTab(closetab);
-
-								    }
-								    checkTest=1;
-									//Services.prompt.alert(null,"ERROR--1","NOT CLICK interval: " +err);
-					            }, timeSec*1.75);
-	    		}
-	    	}
-
-    	}, timeSec);
-
-
-		/*var test = setTimeout(function() {
 					//Services.prompt.alert(null,"use Timeout",timeSec);
 					clearTimeout(test2);
 					clearTimeout(test3);
 					clearTimeout(test4);
-					clearTimeout(globalQUit);
 					jQuery('.next',curdoc)[0].click();	
 					if (!jQuery('.next',curdoc)[0]){
 				      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
 				      	gBrowser.removeTab(closetab);
 
-				      }else{
-				      	jQuery('.next',curdoc)[0].click();
 				      }
 				    // 2de test
 				    var test2 = setTimeout(function() {
 						//Services.prompt.alert(null,"use Timeout 2",timeSec);
 						clearTimeout(test3);
 						clearTimeout(test4);
-						clearTimeout(globalQUit);
 						jQuery('.next',curdoc)[0].click();	
 						if (!jQuery('.next',curdoc)[0]){
 					      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
 					      	gBrowser.removeTab(closetab);
 
-					      }else{
-						      	jQuery('.next',curdoc)[0].click();
-						   }
+					      }
 					      var test3 = setTimeout(function() {
 					      		clearTimeout(test4);
-					      		clearTimeout(globalQUit);
 								//Services.prompt.alert(null,"use Timeout 3",timeSec);
 							
 								jQuery('.next',curdoc)[0].click();	
@@ -1327,28 +1165,29 @@ var checkPageCarrefour = function(loc) {
 							      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
 							      	gBrowser.removeTab(closetab);
 
-							      }else{
-								      	jQuery('.next',curdoc)[0].click();
-								  }
+							      }
 								    var test4 = setTimeout(function() {
 										//Services.prompt.alert(null,"use Timeout 3",timeSec);
 										gBrowser.removeTab(closetab);
-									}, timeSec+ 8000);
+									}, timeSec+ 6000);
 
-							}, timeSec+ 6000);
-
-
-					}, timeSec + 4000);
+							}, timeSec+ 4000);
 
 
-				}, timeSec);*/
+					}, timeSec + 2000);
+
+
+				}, timeSec);
 		
 		// productpagina
 			var autoMode = prefManager.getBoolPref("extensions.delhaizedirect.auto");
 			var interval = Number(prefManager.getCharPref("extensions.delhaizedirect.pageinterval"));
 			var p = [];
 
-			 
+			 var globalQUit = setTimeout(function() {
+										//Services.prompt.alert(null,"use Timeout 3",timeSec);
+										gBrowser.removeTab(closetab);
+									}, 30000);
 
 
 			$('div.modProduct', doc).each(function(tel) {
@@ -1520,16 +1359,11 @@ var checkPageCarrefour = function(loc) {
 						globalCounter = 0;
 						overwriteOnDomLoaded = true;
 						gBrowser.removeTab(closetab);
-					}, interval * (timeSec)); // changed from 1000 to (1000+timeSec)
+					}, interval * 300); // changed from 1000 to 300
 				}
 				
 			}
-			/*var globalQUit = setTimeout(function() {
-
-										Services.prompt.alert(null,"use globalQUit 300000 -> 5min","use globalQUit 300000 -> 5min");
-										gBrowser.removeTab(closetab);
-									}, interval * (timeSec)); // 300000 = 5min // 60000 = 1min // 140000
-									*/
+			
 			/*if(autoMode && nextUrl != '' && !close) {
 				//Services.prompt.alert(null,"autoMode && nextUrl != '' && !close","</br>close: " +close+"</br> globalCounter: "+globalCounter+"</br> totalPages: "+totalPages+ "<br/> overwriteOnDomLoaded: "+overwriteOnDomLoaded);
 				curdoc = doc;
@@ -1557,26 +1391,18 @@ var checkPageCarrefour = function(loc) {
 					//}
 					
 					
-				/*	jQuery('.next',curdoc)[0].click();	
+					jQuery('.next',curdoc)[0].click();	
 							if (!jQuery('.next',curdoc)[0]){
 						      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
 						      	gBrowser.removeTab(closetab);
 
-						      }*/
+						      }
 
-					//clearTimeout(test);
-					//clearTimeout(globalQUit);	 
+					clearTimeout(test);
+					clearTimeout(globalQUit);	 
 				//}
 						
-			/*if (!jQuery('.next',curdoc)[0]){
-		      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-		      	gBrowser.removeTab(closetab);
-		      	clearTimeout(test);
-
-		    }else{
-			      	jQuery('.next',curdoc)[0].click();
-			      	clearTimeout(test);
-			}*/
+				    
 			// als het niet door gaat na 10 sec
 			/*setTimeout(function() {
 					//Services.prompt.alert(null,"use Timeout",timeSec);
@@ -1611,9 +1437,7 @@ var checkPageCarrefour = function(loc) {
 				//}, (interval * 200)); //changed from 400 to 300
 			}*/
 
-			//clearTimeout(test);
 			
-		
 	}	
 		
 }
