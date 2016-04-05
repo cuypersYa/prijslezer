@@ -1130,15 +1130,29 @@ var checkPageCarrefour = function(loc) {
 	//Services.prompt.alert(null,"check loc indexOf: ",loc.indexOf());
 	if(loc.indexOf('/pid') > -1 || loc.indexOf('/searchresult') > -1) {
 		globalCounter += 1;
-		var timeSec=10000;
+		var timeSec=1000;
 		var test2="";
 		var test3="";
 		var test4="";
+		/*var test2 = setTimeout(function() {
+						Services.prompt.alert(null,"use Timeout 2","timeSec: "+(timeSec*1.5));
+						clearTimeout(test3);
+						clearTimeout(test4);
+						clearTimeout(globalQUit);
+						jQuery('.next',curdoc)[0].click();	
+						if (!jQuery('.next',curdoc)[0]){
+					      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
+					      	gBrowser.removeTab(closetab);
+
+					      }
+					      }, timeSec *1.5);
+					      */
 		var test = setTimeout(function() {
-					//Services.prompt.alert(null,"use Timeout",timeSec);
+					//Services.prompt.alert(null,"use Timeout","timeSec: "+timeSec);
 					clearTimeout(test2);
 					clearTimeout(test3);
 					clearTimeout(test4);
+					clearTimeout(globalQUit);
 					jQuery('.next',curdoc)[0].click();	
 					if (!jQuery('.next',curdoc)[0]){
 				      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
@@ -1146,10 +1160,11 @@ var checkPageCarrefour = function(loc) {
 
 				      }
 				    // 2de test
-				    var test2 = setTimeout(function() {
-						//Services.prompt.alert(null,"use Timeout 2",timeSec);
+				    /*var test2 = setTimeout(function() {
+						Services.prompt.alert(null,"use Timeout 2","timeSec: "+(timeSec*1.5));
 						clearTimeout(test3);
 						clearTimeout(test4);
+						clearTimeout(globalQUit);
 						jQuery('.next',curdoc)[0].click();	
 						if (!jQuery('.next',curdoc)[0]){
 					      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
@@ -1158,7 +1173,8 @@ var checkPageCarrefour = function(loc) {
 					      }
 					      var test3 = setTimeout(function() {
 					      		clearTimeout(test4);
-								//Services.prompt.alert(null,"use Timeout 3",timeSec);
+					      		clearTimeout(globalQUit);
+								Services.prompt.alert(null,"use Timeout 3","timeSec: "+(timeSec*1.75));
 							
 								jQuery('.next',curdoc)[0].click();	
 								if (!jQuery('.next',curdoc)[0]){
@@ -1167,24 +1183,30 @@ var checkPageCarrefour = function(loc) {
 
 							      }
 								    var test4 = setTimeout(function() {
-										//Services.prompt.alert(null,"use Timeout 3",timeSec);
-										gBrowser.removeTab(closetab);
-									}, timeSec+ 6000);
+								    	clearTimeout(globalQUit);
+										Services.prompt.alert(null,"use Timeout 4","timeSec: "+(timeSec*2.25));
+										jQuery('.next',curdoc)[0].click();	
+										if (!jQuery('.next',curdoc)[0]){
+									      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
+									      	gBrowser.removeTab(closetab);
 
-							}, timeSec+ 4000);
+									      }
+									}, timeSec*2.25);
+
+							}, timeSec*1.75);
 
 
-					}, timeSec + 2000);
+					}, timeSec *1.5);*/
 
 
 				}, timeSec);
-		
+
 		// productpagina
 			var autoMode = prefManager.getBoolPref("extensions.delhaizedirect.auto");
 			var interval = Number(prefManager.getCharPref("extensions.delhaizedirect.pageinterval"));
 			var p = [];
 
-			 var globalQUit = setTimeout(function() {
+			var globalQUit = setTimeout(function() {
 										//Services.prompt.alert(null,"use Timeout 3",timeSec);
 										gBrowser.removeTab(closetab);
 									}, 30000);
@@ -1359,7 +1381,7 @@ var checkPageCarrefour = function(loc) {
 						globalCounter = 0;
 						overwriteOnDomLoaded = true;
 						gBrowser.removeTab(closetab);
-					}, interval * 300); // changed from 1000 to 300
+					}, interval * 1000); // changed from 1000 to 300
 				}
 				
 			}
@@ -1391,7 +1413,7 @@ var checkPageCarrefour = function(loc) {
 					//}
 					
 					
-					jQuery('.next',curdoc)[0].click();	
+					/*jQuery('.next',curdoc)[0].click();	
 							if (!jQuery('.next',curdoc)[0]){
 						      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
 						      	gBrowser.removeTab(closetab);
@@ -1399,7 +1421,7 @@ var checkPageCarrefour = function(loc) {
 						      }
 
 					clearTimeout(test);
-					clearTimeout(globalQUit);	 
+					clearTimeout(globalQUit);	 */
 				//}
 						
 				    
