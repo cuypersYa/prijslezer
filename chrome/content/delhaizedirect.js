@@ -1130,86 +1130,71 @@ var checkPageCarrefour = function(loc) {
 	//Services.prompt.alert(null,"check loc indexOf: ",loc.indexOf());
 	if(loc.indexOf('/pid') > -1 || loc.indexOf('/searchresult') > -1) {
 		globalCounter += 1;
-		var timeSec=1000;
+		var timeSec=1500;
 		var test2="";
 		var test3="";
 		var test4="";
-		/*var test2 = setTimeout(function() {
-						Services.prompt.alert(null,"use Timeout 2","timeSec: "+(timeSec*1.5));
-						clearTimeout(test3);
-						clearTimeout(test4);
-						clearTimeout(globalQUit);
-						jQuery('.next',curdoc)[0].click();	
-						if (!jQuery('.next',curdoc)[0]){
-					      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-					      	gBrowser.removeTab(closetab);
 
-					      }
-					      }, timeSec *1.5);
-					      */
-		var test = setTimeout(function() {
+		
+
+		
+					      
+		try{
+
+
+			var test = setTimeout(function() {
 					//Services.prompt.alert(null,"use Timeout","timeSec: "+timeSec);
-					clearTimeout(test2);
-					clearTimeout(test3);
+					/*clearTimeout(test2);
+					
 					clearTimeout(test4);
-					clearTimeout(globalQUit);
+					clearTimeout(globalQUit);*/
 					jQuery('.next',curdoc)[0].click();	
 					if (!jQuery('.next',curdoc)[0]){
 				      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
 				      	gBrowser.removeTab(closetab);
 
 				      }
-				    // 2de test
-				    /*var test2 = setTimeout(function() {
-						Services.prompt.alert(null,"use Timeout 2","timeSec: "+(timeSec*1.5));
+				  
+
+			}, timeSec);
+		} catch{
+			var test3 = setTimeout(function() {
+						/*Services.prompt.alert(null,"use Timeout 2","timeSec: "+(timeSec*1.5));
 						clearTimeout(test3);
 						clearTimeout(test4);
-						clearTimeout(globalQUit);
+						clearTimeout(globalQUit);*/
 						jQuery('.next',curdoc)[0].click();	
 						if (!jQuery('.next',curdoc)[0]){
 					      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
 					      	gBrowser.removeTab(closetab);
 
 					      }
-					      var test3 = setTimeout(function() {
-					      		clearTimeout(test4);
-					      		clearTimeout(globalQUit);
-								Services.prompt.alert(null,"use Timeout 3","timeSec: "+(timeSec*1.75));
-							
-								jQuery('.next',curdoc)[0].click();	
-								if (!jQuery('.next',curdoc)[0]){
-							      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-							      	gBrowser.removeTab(closetab);
+			}, timeSec *1.75);
+			var test2 = setTimeout(function() {
+						
+						/*Services.prompt.alert(null,"use Timeout 2","timeSec: "+(timeSec*1.5));
+						
+						clearTimeout(test4);
+						clearTimeout(globalQUit);*/
+						jQuery('.next',curdoc)[0].click();	
+						if (!jQuery('.next',curdoc)[0]){
+					      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
+					      	gBrowser.removeTab(closetab);
 
-							      }
-								    var test4 = setTimeout(function() {
-								    	clearTimeout(globalQUit);
-										Services.prompt.alert(null,"use Timeout 4","timeSec: "+(timeSec*2.25));
-										jQuery('.next',curdoc)[0].click();	
-										if (!jQuery('.next',curdoc)[0]){
-									      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-									      	gBrowser.removeTab(closetab);
-
-									      }
-									}, timeSec*2.25);
-
-							}, timeSec*1.75);
-
-
-					}, timeSec *1.5);*/
-
-
-				}, timeSec);
+					    }
+					    clearTimeout(test3);
+			}, timeSec *1.5);
+		}
 
 		// productpagina
 			var autoMode = prefManager.getBoolPref("extensions.delhaizedirect.auto");
 			var interval = Number(prefManager.getCharPref("extensions.delhaizedirect.pageinterval"));
 			var p = [];
 
-			var globalQUit = setTimeout(function() {
+			/*var globalQUit = setTimeout(function() {
 										//Services.prompt.alert(null,"use Timeout 3",timeSec);
 										gBrowser.removeTab(closetab);
-									}, 30000);
+									}, 30000);*/
 
 
 			$('div.modProduct', doc).each(function(tel) {
@@ -1404,6 +1389,17 @@ var checkPageCarrefour = function(loc) {
 				
 			}*/
 			
+			/*try{
+						jQuery('.next',curdoc)[0].click();	
+						if (!jQuery('.next',curdoc)[0]){
+					      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
+					      	gBrowser.removeTab(closetab);
+
+					    }
+					    clearTimeout(test);
+					}catch (err){}
+			*/
+
 			//Services.prompt.alert(null,"check globalCounter","globalCounter: "+globalCounter+'\n'+"timeSec: "+timeSec);
 
 				//if(autoMode && !close) {
@@ -1413,15 +1409,9 @@ var checkPageCarrefour = function(loc) {
 					//}
 					
 					
-					/*jQuery('.next',curdoc)[0].click();	
-							if (!jQuery('.next',curdoc)[0]){
-						      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-						      	gBrowser.removeTab(closetab);
-
-						      }
-
-					clearTimeout(test);
-					clearTimeout(globalQUit);	 */
+					
+					
+					/*clearTimeout(globalQUit);	 */
 				//}
 						
 				    
