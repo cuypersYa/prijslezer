@@ -1128,41 +1128,70 @@ var checkPageCarrefour = function(loc) {
 	var prefManager = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
 	
 	//Services.prompt.alert(null,"check loc indexOf: ",loc.indexOf());
+	// pluginCarrefour
 	if(loc.indexOf('/pid') > -1 || loc.indexOf('/searchresult') > -1) {
 		globalCounter += 1;
-		var timeSec=1500;
+		var timeSec=3000;
 		var test2="";
 		var test3="";
 		var test4="";
+		/*var test3 = setTimeout(function() {
+						
+						/*Services.prompt.alert(null,"use Timeout 2","timeSec: "+(timeSec*1.5));
+						
+						clearTimeout(test4);
+						clearTimeout(globalQUit);*
+						jQuery('.next',curdoc)[0].click();	
+						if (!jQuery('.next',curdoc)[0]){
+					      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
+					      	gBrowser.removeTab(closetab);
 
+					    }
+					    clearTimeout(test3);
+			}, timeSec *1.66);*/
+		/*var test2 = setTimeout(function() {
+						
+						/*Services.prompt.alert(null,"use Timeout 2","timeSec: "+(timeSec*1.5));
+						
+						clearTimeout(test4);
+						clearTimeout(globalQUit);*
+						jQuery('.next',curdoc)[0].click();	
+						if (!jQuery('.next',curdoc)[0]){
+					      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
+					      	gBrowser.removeTab(closetab);
+
+					    }
+					    //clearTimeout(test2);
+			}, timeSec *1.5);
+			
 		
-
-		
-					      
-		try{
-
-
-			var test = setTimeout(function() {
+		var test = setTimeout(function() {
 					//Services.prompt.alert(null,"use Timeout","timeSec: "+timeSec);
 					/*clearTimeout(test2);
-					
 					clearTimeout(test4);
-					clearTimeout(globalQUit);*/
+					clearTimeout(globalQUit);*
 					jQuery('.next',curdoc)[0].click();	
 					if (!jQuery('.next',curdoc)[0]){
 				      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
 				      	gBrowser.removeTab(closetab);
 
 				      }
-				  
+				  //clearTimeout(test);
 
 			}, timeSec);
+			*/
+		
+					      
+		/*try{
+
+
+			
 		} catch{
 			var test3 = setTimeout(function() {
 						/*Services.prompt.alert(null,"use Timeout 2","timeSec: "+(timeSec*1.5));
 						clearTimeout(test3);
 						clearTimeout(test4);
-						clearTimeout(globalQUit);*/
+						clearTimeout(globalQUit);*
 						jQuery('.next',curdoc)[0].click();	
 						if (!jQuery('.next',curdoc)[0]){
 					      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
@@ -1175,7 +1204,7 @@ var checkPageCarrefour = function(loc) {
 						/*Services.prompt.alert(null,"use Timeout 2","timeSec: "+(timeSec*1.5));
 						
 						clearTimeout(test4);
-						clearTimeout(globalQUit);*/
+						clearTimeout(globalQUit);*
 						jQuery('.next',curdoc)[0].click();	
 						if (!jQuery('.next',curdoc)[0]){
 					      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
@@ -1184,7 +1213,7 @@ var checkPageCarrefour = function(loc) {
 					    }
 					    clearTimeout(test3);
 			}, timeSec *1.5);
-		}
+		}*/
 
 		// productpagina
 			var autoMode = prefManager.getBoolPref("extensions.delhaizedirect.auto");
@@ -1270,12 +1299,12 @@ var checkPageCarrefour = function(loc) {
 				rootdoc.title = curIndex + ' / ' + list.length + ' - ' + prod + ' product' + (prod != 1 ? 'en' : '');
 			}
 			
-			setTimeout(function() {
+			/*setTimeout(function() {
 				allowNewWindow = true;
-			}, 9000);
+			}, 9000);*/
 			
 			if(c > 0) {
-				//globalCounter += 1;
+				globalCounter += 1;
 				var path = prefManager.getCharPref("extensions.delhaizedirect.pathc");
 				if(path.substr(path.length-1, 1) != '\\') {
 					path = path + '\\';	
@@ -1321,22 +1350,23 @@ var checkPageCarrefour = function(loc) {
 				stream.close();
 			}
 
-			nextUrl = '';
+			/*nextUrl = '';
 			if($('.pager .next', doc).size() > 0) {
 				nextUrl = $('.pager .next', doc).eq(0).attr('href');
-			}
+			}*/
 			
 			// calculate total pages
-			var totalPages = 1;
+			/*var totalPages = 1;
 			if($('.pager .last a', doc).length) {
 				totalPages = $('.pager .last a', doc).eq(0).text();
 			}
 			var close = false;
 			if(globalCounter >= totalPages){
 				close = true;
-			}			
+			}	*/		
 		
-			if(autoMode && close) {
+			if(autoMode ) {
+				//&& close
 				globalCounter = 0;
 				
 				var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator);
@@ -1360,17 +1390,18 @@ var checkPageCarrefour = function(loc) {
 					}
 				}
 				
-				if (found) {
+				/*if (found) {
 					curdoc = null;
 					setTimeout(function() {
 						globalCounter = 0;
 						overwriteOnDomLoaded = true;
 						gBrowser.removeTab(closetab);
-					}, interval * 1000); // changed from 1000 to 300
-				}
+					}, interval * 1500); // changed from 1000 to timeSec 
+				}*/
 				
 			}
 			
+			//if ()
 			/*if(autoMode && nextUrl != '' && !close) {
 				//Services.prompt.alert(null,"autoMode && nextUrl != '' && !close","</br>close: " +close+"</br> globalCounter: "+globalCounter+"</br> totalPages: "+totalPages+ "<br/> overwriteOnDomLoaded: "+overwriteOnDomLoaded);
 				curdoc = doc;
@@ -1382,23 +1413,34 @@ var checkPageCarrefour = function(loc) {
 				      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
 				      	gBrowser.removeTab(closetab);
 				      }
-
-				}, (interval * 200)); // changed from 2500 to (interval * 250)
-				*//*
+*/
+				//}, (interval * 200)); // changed from 2500 to (interval * 250)
+				//*//*
 				
 				
-			}*/
+			//}*///
 			
-			/*try{
-						jQuery('.next',curdoc)[0].click();	
-						if (!jQuery('.next',curdoc)[0]){
-					      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
-					      	gBrowser.removeTab(closetab);
 
-					    }
-					    clearTimeout(test);
-					}catch (err){}
-			*/
+			var test = setTimeout(function() {
+
+
+					if (!jQuery('.next',curdoc)[0] && (Number(jQuery('.pager .active',curdoc).text())=== Number(jQuery('.pager .last',curdoc).text())))
+					{
+				      	//Services.prompt.alert(null,"interval * 1000 NOT click","NOT CLICK interval: " +interval);
+				      	//Services.prompt.alert(null,"CurrentPage","current page: "+Number(jQuery('.pager .active',curdoc).text())+ " last: "+Number(jQuery('.pager .last',curdoc).text()));
+				      	gBrowser.removeTab(closetab);
+
+				    }else if (!jQuery('.pager .active',curdoc)[0] && (!jQuery('.next',curdoc)[0]))
+				    {
+				    	gBrowser.removeTab(closetab);
+				    }else {
+				      	jQuery('.next',curdoc)[0].click();
+				    }
+
+				  //clearTimeout(test);
+
+			}, timeSec);
+				 	
 
 			//Services.prompt.alert(null,"check globalCounter","globalCounter: "+globalCounter+'\n'+"timeSec: "+timeSec);
 
